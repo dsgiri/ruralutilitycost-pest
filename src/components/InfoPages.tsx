@@ -1,0 +1,75 @@
+import React from 'react';
+import { ViewState } from '../types';
+
+interface InfoPagesProps {
+  view: ViewState;
+}
+
+export default function InfoPages({ view }: InfoPagesProps) {
+  return (
+    <div className="max-w-3xl mx-auto bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden min-h-[500px]">
+      <div className="p-6 sm:p-8">
+        {view === 'About' && (
+          <div className="space-y-4 text-slate-700 max-w-none">
+            <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-6 border-b border-slate-100 pb-4">About Pest</h2>
+            <p className="text-sm font-medium leading-relaxed">
+              Pest is an integrated pest management and pest risk decision-support hub, proudly part of the Rural Utility Cost ecosystem.
+            </p>
+            <p className="text-xs leading-relaxed">
+              Our mission is to help farmers, crop advisers, and rural producers monitor pest risk, disease risk, insect pressure, spray timing, and weather-linked risk. 
+            </p>
+            <p className="text-xs leading-relaxed">
+              By utilizing actionable risk cards, scouting tools, and tracking metrics, we aim to support decision-making that reduces unnecessary sprays, improves intervention timing, and encourages effective Integrated Pest Management (IPM) practices.
+            </p>
+          </div>
+        )}
+
+        {view === 'Legal' && (
+          <div className="space-y-4 text-slate-700 max-w-none">
+            <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-6 border-b border-slate-100 pb-4">Legal & Terms</h2>
+            <div className="bg-amber-50 border border-amber-200 p-4 mb-6 rounded flex items-start gap-3">
+              <span className="text-amber-500 font-bold">⚠</span>
+              <div>
+                <h3 className="text-[10px] font-bold text-amber-800 uppercase tracking-widest mb-1">Informational Purposes Only</h3>
+                <p className="text-amber-900 text-xs font-medium">
+                  All pest guidance provided within this application is for informational support only. The results are based on forecasting models and simulated pressure indices.
+                </p>
+              </div>
+            </div>
+            <ul className="space-y-3 pl-4 list-[square] text-xs font-medium text-slate-600">
+              <li>Thresholds, resistance management strategies, official pesticide labels, and local regulations <strong className="text-slate-900">always govern</strong> pest control decisions.</li>
+              <li>This app does not replace professional agronomy, legal, insurance, or safety advice.</li>
+              <li>Users are entirely responsible for verifying critical operational decisions independently.</li>
+              <li>We assume no liability for crop damage, off-target impacts, or misapplied treatments resulting from the use of these tools.</li>
+            </ul>
+          </div>
+        )}
+
+        {view === 'License' && (
+          <div className="space-y-4 text-slate-700 max-w-none">
+            <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-6 border-b border-slate-100 pb-4">License</h2>
+            <p className="text-xs font-medium leading-relaxed">
+              The use of applications hosted under ruralutilitycost.com is subject to our master licensing agreement. Data inputs remain the property of the user, while the forecasting models and structural software remain proprietary where applicable.
+            </p>
+          </div>
+        )}
+
+        {view === 'Contact' && (
+          <div className="space-y-4 text-slate-700 max-w-none">
+            <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-6 border-b border-slate-100 pb-4">Contact Us</h2>
+            <p className="text-xs font-medium leading-relaxed mb-6">
+              For support, inquiries, or feedback regarding the Pest module, please contact the network administration.
+            </p>
+            <div className="bg-slate-50 p-6 rounded border border-slate-100">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Email</p>
+              <a href="mailto:support@ruralutilitycost.com" className="text-emerald-700 hover:underline block mb-5 text-sm font-bold">support@ruralutilitycost.com</a>
+              
+              <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Parent Network</p>
+              <a href="https://ruralutilitycost.com" className="text-emerald-700 hover:underline text-sm font-bold">ruralutilitycost.com</a>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}

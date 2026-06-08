@@ -1,0 +1,6 @@
+{
+  "name": "Pest",
+  "description": "Integrated pest management and pest risk decision-support hub",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
