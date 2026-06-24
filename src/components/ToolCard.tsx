@@ -11,7 +11,19 @@ interface ToolCardProps {
 
 export default function ToolCard({ tool, isFavorite, onToggleFavorite, onNavigate }: ToolCardProps) {
   return (
-    <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm relative overflow-hidden flex flex-col h-full group">
+    <div 
+      className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm relative overflow-hidden flex flex-col h-full group cursor-pointer hover:shadow-md transition-shadow focus:outline-none focus:ring-2 focus:ring-emerald-500"
+      onClick={() => onNavigate(tool.viewPath)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onNavigate(tool.viewPath);
+        }
+      }}
+      role="button"
+      tabIndex={0}
+      aria-label={`Open ${tool.title}`}
+    >
       <div className="absolute top-0 left-0 w-1 h-full bg-slate-300 group-hover:bg-emerald-500 transition-colors"></div>
       
       <div className="flex justify-between items-start mb-2 pl-2">
@@ -19,7 +31,10 @@ export default function ToolCard({ tool, isFavorite, onToggleFavorite, onNavigat
           {tool.category}
         </span>
         <button
-          onClick={(e) => onToggleFavorite(tool.id, e)}
+          onClick={(e) => {
+            e.stopPropagation();
+            onToggleFavorite(tool.id, e);
+          }}
           className={`focus:outline-none focus:ring-2 focus:ring-slate-300 rounded-full transition-colors min-h-[48px] min-w-[48px] flex items-center justify-center -mr-2 ${
             isFavorite ? 'text-red-400' : 'text-slate-300 hover:text-slate-400'
           }`}
@@ -39,9 +54,13 @@ export default function ToolCard({ tool, isFavorite, onToggleFavorite, onNavigat
           <p className="text-[10px] font-bold truncate m-0" title={tool.primaryOutcome}>{tool.primaryOutcome}</p>
         </div>
         <button
-          onClick={() => onNavigate(tool.viewPath)}
-          aria-label={`Open ${tool.title}`}
-          className="inline-flex items-center justify-center px-4 py-2 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 text-[10px] font-bold rounded uppercase tracking-wider transition-colors border border-emerald-100 min-h-[48px] min-w-[70px] focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          onClick={(e) => {
+            e.stopPropagation();
+            onNavigate(tool.viewPath);
+          }}
+          tabIndex={-1}
+          aria-hidden="true"
+          className="inline-flex items-center justify-center px-4 py-2 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 text-[10px] font-bold rounded uppercase tracking-wider transition-colors border border-emerald-100 min-h-[48px] min-w-[70px] focus:outline-none focus:ring-2 focus:ring-emerald-500 group-hover:bg-emerald-100"
         >
           Open
         </button>

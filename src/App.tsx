@@ -16,6 +16,7 @@ import TrapTracker from './components/TrapTracker';
 import SprayDecision from './components/SprayDecision';
 import AlertsPanel from './components/AlertsPanel';
 import FavoritesView from './components/FavoritesView';
+import CalculatorsView from './components/CalculatorsView';
 import CookieBanner from './components/CookieBanner';
 
 export default function App() {
@@ -69,6 +70,7 @@ export default function App() {
       case 'Spray': return <SprayDecision />;
       case 'Alerts': return <AlertsPanel />;
       case 'Favorites': return <FavoritesView onNavigate={setCurrentView} favorites={favorites} toggleFavorite={toggleFavorite} />;
+      case 'Calculators': return <CalculatorsView />;
       case 'About':
       case 'Contact':
       case 'Legal':

@@ -15,7 +15,8 @@ const NAV_ITEMS: { label: string; view: ViewState }[] = [
   { label: 'Traps', view: 'Traps' },
   { label: 'Spray', view: 'Spray' },
   { label: 'Alerts', view: 'Alerts' },
-  { label: 'Favorites', view: 'Favorites' }
+  { label: 'Favorites', view: 'Favorites' },
+  { label: 'Calculators', view: 'Calculators' }
 ];
 
 export default function Navbar({ currentView, onNavigate }: NavbarProps) {

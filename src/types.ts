@@ -1,6 +1,6 @@
-export type ViewState = 'Home' | 'Risk' | 'Disease' | 'Scouting' | 'Traps' | 'Spray' | 'Alerts' | 'Favorites' | 'About' | 'Contact' | 'Legal' | 'License';
+export type ViewState = 'Home' | 'Risk' | 'Disease' | 'Scouting' | 'Traps' | 'Spray' | 'Alerts' | 'Favorites' | 'Calculators' | 'About' | 'Contact' | 'Legal' | 'License';
 
-export type ToolCategory = 'Risk' | 'Disease' | 'Scouting' | 'Traps' | 'Spray' | 'Alerts';
+export type ToolCategory = 'Risk' | 'Disease' | 'Scouting' | 'Traps' | 'Spray' | 'Alerts' | 'Calculators';
 
 export interface Tool {
   id: string;
